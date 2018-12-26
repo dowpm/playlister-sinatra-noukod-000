@@ -1,7 +1,10 @@
 class SongsController < ApplicationController
 
+<<<<<<< HEAD
   use Rack::Flash
 
+=======
+>>>>>>> c5e4edf1b1ef3e9ed52210d6477154262922fa41
   get '/songs' do
     # binding.pry
     @songs = Song.all
@@ -13,12 +16,22 @@ class SongsController < ApplicationController
     erb :"songs/new"
   end
 
+<<<<<<< HEAD
+=======
+  post '/songs' do
+    binding.pry
+    song = Song.new name: params[:song][:name]
+    artist = Artist.create params[:artist]
+  end
+
+>>>>>>> c5e4edf1b1ef3e9ed52210d6477154262922fa41
   get '/songs/:slug' do
     # binding.pry
     @song = Song.find_by_slug params[:slug]
     erb :"songs/show"
   end
 
+<<<<<<< HEAD
   post '/songs' do
     # binding.pry
     song = Song.create params[:song]
@@ -47,4 +60,6 @@ class SongsController < ApplicationController
     redirect("/songs/#{song.slug}")
   end
 
+=======
+>>>>>>> c5e4edf1b1ef3e9ed52210d6477154262922fa41
 end
